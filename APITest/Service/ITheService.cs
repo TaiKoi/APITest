@@ -1,10 +1,11 @@
-﻿using APITest.Data;
+﻿using APITest.DataDTO;
 using System.Collections.Generic;
 
 namespace APITest.Service
 {
     public interface ITheService
     {
-        List<MyData> GetMyDatas();
+        List<MyDataDTO> GetMyDatas();
+        void Create(MyDataDTO myData);
     }
 }

@@ -1,4 +1,4 @@
-﻿using APITest.Data;
+﻿using APITest.DataDTO;
 using APITest.Service;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -18,7 +18,7 @@ namespace APITest.Controllers
 
         // GET api/values
         [HttpGet]
-        public List<MyData> GetMyDatas()
+        public List<MyDataDTO> GetMyDatas()
         {
             return this.theService.GetMyDatas();
         }
@@ -32,8 +32,10 @@ namespace APITest.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] MyDataDTO newData) // Accept a MyData object from body of POST
         {
+            // Use the service to add data
+            this.theService.Create(newData); 
         }
 
         // PUT api/values/5
