@@ -39,7 +39,7 @@ namespace APITest.Service
             {
                 Title = myDataDto.Title,
                 Length = myDataDto.Length,
-                IsTrue = myDataDto.IsTrue          
+                IsTrue = myDataDto.IsTrue        
             };
 
             this.dContext.MyDatas.Add(myData);
